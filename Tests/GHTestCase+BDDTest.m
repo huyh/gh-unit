@@ -6,24 +6,16 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "GHTestCase+BDDTest.h"
+#import "GTMSenTestCase.h"
+#import "GHTestCase+BDD.h"
 
+@interface GHTestCase_BDDTest : GHTestCase
+@end
 
 @implementation GHTestCase_BDDTest
 
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        // Initialization code here.
-    }
-    
-    return self;
-}
-
-- (void)dealloc
-{
-    [super dealloc];
+- (void)testCanRunItBlock {
+    [self it:@"should execute the passed block" :^ { STAssertTrue(YES, nil); }];
 }
 
 @end
